@@ -47,8 +47,9 @@ abstract class AuthItemController extends AuthController
 
 				if (($item = $am->getAuthItem($model->name)) === null)
 				{
-					$item = $am->createAuthItem($model->name, $model->type, $model->description);
-					if ($am instanceof CPhpAuthManager)
+				    $model->bizrule = $_POST['AuthItemForm']['bizrule'];
+					$item = $am->createAuthItem($model->name, $model->type, $model->description, $model->bizrule);
+                    if ($am instanceof CPhpAuthManager)
 						$am->save();
 				}
 
