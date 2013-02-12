@@ -66,7 +66,6 @@ abstract class AuthItemController extends AuthController
 	/**
 	 * Displays a form for updating the item with the given name.
 	 * @param string $name name of the item.
-	 * @throws CHttpException if the authorization item is not found.
 	 */
 	public function actionUpdate($name)
 	{
@@ -86,6 +85,7 @@ abstract class AuthItemController extends AuthController
 			if ($model->validate())
 			{
 				$item->description = $model->description;
+                $item->bizrule = $_POST['AuthItemForm']['bizrule'];
 
 				$am->saveAuthItem($item);
 				if ($am instanceof CPhpAuthManager)
@@ -98,6 +98,7 @@ abstract class AuthItemController extends AuthController
 		$model->name = $name;
 		$model->description = $item->description;
 		$model->type = $item->type;
+        $model->bizrule = $item->bizrule;
 
 		$this->render('update', array(
 			'item' => $item,

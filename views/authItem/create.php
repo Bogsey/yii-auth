@@ -18,6 +18,7 @@ $this->breadcrumbs = array(
 <?php echo $form->hiddenField($model, 'type'); ?>
 <?php echo $form->textFieldRow($model, 'name'); ?>
 <?php echo $form->textFieldRow($model, 'description'); ?>
+<?php echo $form->textAreaRow($model, 'bizrule', array('class'=>'span8', 'rows'=>5));?>
 
 <div class="form-actions">
 	<?php $this->widget('bootstrap.widgets.TbButton', array(

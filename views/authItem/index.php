@@ -34,6 +34,11 @@ $this->breadcrumbs = array(
 			'htmlOptions' => array('class'=>'item-description-column'),
 		),
 		array(
+            'name' => 'bizrule',
+            'header' => Yii::t('AuthModule.main', 'Business Rule'),
+            'htmlOptions' => array('class'=>'item-description-column'),
+        ),
+		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
 			'viewButtonLabel' => Yii::t('AuthModule.main', 'View'),
 			'viewButtonUrl' => "Yii::app()->controller->createUrl('view', array('name'=>\$data->name))",
